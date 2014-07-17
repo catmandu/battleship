@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+ <script src="./js/construir tabla.js"></script>
+ <script src="./js/colisiones.js"></script>
+ <script src="./js/pintar Tabla.js"></script>
+ <script src="./js/variables globales.js"></script>
+ <script src="./js/agregarBarcos.js"></script>
+ <script src="./js/colocar barcos2.js"></script>
+ <script src="./js/colocar barcos3.js"></script>
+ <script src="./js/colocar barcos4.js"></script>
+ <script src="./js/colocar barcos5.js"></script>
+ <script src="./js/borrar2.js"></script>
+ <script src="./js/borrar3.js"></script>
+ <script src="./js/borrar4.js"></script>
+ <script src="./js/borrar5.js"></script>
+ <script>
+ function empezar()
+ {
+	 document.getElementById('body').background="./img/oceano.jpg";
+	 document.getElementById('contenedorOpciones').style.visibility="visible";
+	 document.getElementById('empezar').style.visibility="hidden";
+	 document.getElementById('fase').style.visibility="visible";
+	 document.getElementById('fase').innerHTML="Colocar barcos: "+turno;
+	 tabla();
+	 alert('Jugador 1, coloque sus barcos');
+ }
+ </script>
+ <link  rel="stylesheet" href="./css/rotar.css">
+</head>
+	<body id="body" background="./img/battleship.jpg" style="background-size:100%;">
+    <label id="fase" class="labels" style=" color:#FC0; position:absolute; left:40%; z-index:5; visibility:hidden;">asdasf</label>
+    <input type="button" class="boton" id="empezar" onClick="empezar();" value="Empezar" style="position:relative; top:250px; left:70%; "/>
+    
+      <table bgcolor="#0099FF" id="cuadricula" style="position:absolute;  z-index:2;" bgcolor="#006699"></table>
+      <table bgcolor="#00FF99"  id="cuadricula2" style="position:absolute; left:50%; z-index:3;"></table>
+        <div id="contenedorOpciones" style="visibility:hidden; position:absolute; left:60%; z-index:5;">
+         <label class="labels">Tama&ntilde;o del barco</label><br/>
+         <select id="barcos"><option>2</option><option>3</option><option>4</option><option>5</option></select> <br/><br/>
+         <label class="labels">Orientaci&oacute;n del barco</label> <br/>
+         <select  id="orientacion"><option selected="selected">vertical</option><option>horizontal</option></select> <br/><br/>
+         <input class="boton" type="button" value="listo" onClick="construirTurno();" />
+        </div>
+    </body>
+</html>
